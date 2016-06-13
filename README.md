@@ -9,8 +9,8 @@ Requirements
 ------------------------
 
 * Linux/Unix
-* Scala
-* Java
+* Scala (2.10)
+* Java (1.7 or above)
 * Gurobi solver (http://www.gurobi.com/)
 * OscaR (https://bitbucket.org/oscarlib/oscar/wiki/Home)
 
@@ -23,8 +23,21 @@ Setup
 
 ### Compilation
 
+First, use Eclipse IDE for Scale (http://scala-ide.org/) to import the two projects, including SRF and SRFWrapper, in the current folder. Then, 
 
+How to compile the project using sbt tool will be added soon.
 
+### Run diffusion
+
+To be added soon.
+
+### Convert to ranked data
+
+To be added soon.
+
+### Hierarchical clustering
+
+To be added soon.
 
 Run
 ------------------------
@@ -42,10 +55,10 @@ Gurobi is installed and its enviroment variables are setup correctly.
         |                         |                    |where each row contains                                     |
         -------------------------------------------------------------------------------------------------------------
         |-ef                      | None               |Absolute path to the tab-separated ranked expression file   |
-        |                         |                    |                                 			    |
+        |                         |                    |                                 			                |
         -------------------------------------------------------------------------------------------------------------
-        |-if       		  | None	       |Initialised matrix F obtained by a hierarchical 		  
-        |                         |                    |clustering.                   				    |
+        |-if       		          | None	           |Initialised matrix F obtained by a hierarchical 		  
+        |                         |                    |clustering.                   				                |
         -------------------------------------------------------------------------------------------------------------        
         |-k                       | 5                  |Number of ranked factors                                    |
         |                         |                    |                                                            |
@@ -61,7 +74,7 @@ Gurobi is installed and its enviroment variables are setup correctly.
         |                         |                    |The actual integer threshold that is used in the program is |
         |                         |                    |calculated as followed: \theta_1 * maxD, where maxD is the  |
         |                         |                    |user-input value specifying the maximum value of rank       |
-        |                         |                    |diffusion.						    |
+        |                         |                    |diffusion.						                            |
         -------------------------------------------------------------------------------------------------------------
         |-beta                    | 1                  |The rank imbalance threshold used to specify the relative 
         |                         |                    |importance between mutation data and expression data.       |
@@ -75,15 +88,16 @@ Gurobi is installed and its enviroment variables are setup correctly.
         -------------------------------------------------------------------------------------------------------------
         |-maxD                    | 0                  |Maximum value of ranked diffusion. This should be equal to  |
         |                         |                    |the number of vertices in the graph used to run the         |
-        |                         |		       |diffusion. Note that if maxD = 0, the program               |
-	|			  |                    |uses the number of rows of the ranked diffusion matrix      |
-        |                         |                    |the maximum value of ranked diffusion.			    |
+        |                         |		               |diffusion. Note that if maxD = 0, the program               |
+	    |			              |                    |uses the number of rows of the ranked diffusion matrix      |
+        |                         |                    |the maximum value of ranked diffusion.			            |
         -------------------------------------------------------------------------------------------------------------
         |-maxE                    | 0                  |Maximum value of ranked expression. This should be equal to |
         |                         |                    |the number of the columns of the ranked expression          |
         |                         |                    |matrix. Note that if maxE = 0 or is not specified,          |
-	|                         |                    |the program automatically uses the number of the columns    |
-        |                         |                    |of the ranked expression matrix the maximum value of ranked | 		|                         |                    |expression.			                            |
+	    |                         |                    |the program automatically uses the number of the columns    |
+        |                         |                    |of the ranked expression matrix the maximum value of ranked |
+		|                         |                    |expression.			                                        |
         -------------------------------------------------------------------------------------------------------------
         |-dir                     | ./                 |Working directory which will be used to store the results   |
         |                         |                    |                                                            |
@@ -92,9 +106,12 @@ Gurobi is installed and its enviroment variables are setup correctly.
         |                         |                    |                                                            |
         -------------------------------------------------------------------------------------------------------------
 
+## Command line
+
+	java -Xmx4096m -jar path_to_the_jar_file/ParallelSubtypingUsingRMF.jar
 
 Citation
 ------------------------
 If you use SRF in your work, please cite:
 
-T. Le Van, M. van Leeuwen, ..., L. De Raedt, K. Marchal, S. Nijssen. (2016) Simultaneous discovery of cancer subtypes and subtype features by molecular data integration. Bioinformatics, ?, (2016).
+T. Le Van, M. van Leeuwen, A. Fierro, D. De Maeyer, J. Van den Eynden, L. Verbeke, L. De Raedt, K. Marchal, S. Nijssen. (2016) Simultaneous discovery of cancer subtypes and subtype features by molecular data integration. Bioinformatics, ?, (2016).
