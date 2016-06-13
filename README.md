@@ -23,7 +23,7 @@ Setup
 
 ### Compilation
 
-First, use Eclipse IDE for Scale (http://scala-ide.org/) to import the two projects, including SRF and SRFWrapper, in the current folder. Then, 
+First, use Eclipse IDE for Scale (http://scala-ide.org/) to import the two projects, including SRF and SRFWrapper, in the current folder. Then, use the export tool of the IDE to package the SRFWrapper/src/ParallelSubtypingUsingRMF.java into a jar file named ParallelSubtypingUsingRMF.jar.
 
 How to compile the project using sbt tool will be added soon.
 
@@ -57,7 +57,7 @@ Gurobi is installed and its enviroment variables are setup correctly.
         |-ef                      | None               |Absolute path to the tab-separated ranked expression file   |
         |                         |                    |                                 			                |
         -------------------------------------------------------------------------------------------------------------
-        |-if       		          | None	           |Initialised matrix F obtained by a hierarchical 		  
+        |-if       		          | None	           |Initialised matrix F obtained by a hierarchical 	        |	  
         |                         |                    |clustering.                   				                |
         -------------------------------------------------------------------------------------------------------------        
         |-k                       | 5                  |Number of ranked factors                                    |
